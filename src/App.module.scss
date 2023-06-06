@@ -89,54 +89,6 @@ hr {
   }
 }
 
-.topArticlesBar {
-  counter-reset: articleNb;
-
-  ol {
-    display: flex;
-    flex-direction: row;
-    text-align: left;
-    padding: 0;
-  }
-
-  li {
-    list-style-type: none;
-    flex: 1 1 0px;
-    display: flex;
-
-    img {
-      height: 8rem;
-      float:left;
-      margin-right: 2rem
-    }
-
-    div::before {
-      counter-increment: articleNb;
-      content: counter(articleNb, decimal-leading-zero);
-      display: inline-block;
-      color: hsl(233, 8%, 79%);
-      font-size: 2rem;
-      margin-bottom: 0.5rem;
-      cursor: default;
-      text-decoration: none;
-      font-weight: 700;
-    }
-
-    h3 {
-      margin: 0;
-      color: hsl(240, 100%, 5%);
-    }
-
-    a:hover {
-      color: hsl(5, 85%, 63%);
-    }
-
-    p {
-      margin-top: 0.5rem
-    }
-  }
-}
-
 @media only screen and (min-width: 1000px) {
   .topArticlesBar li:not(:first-child) {
     margin-left: 1rem;
