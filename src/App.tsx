@@ -1,4 +1,4 @@
-import "./App.css";
+import "./App.scss";
 import logo from "./assets/logo.svg";
 import articleImage from "./assets/image-web-3-desktop.jpg";
 import retroPcImg from "./assets/image-retro-pcs.jpg";
