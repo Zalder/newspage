@@ -1,0 +1,197 @@
+#root {
+  text-align: center;
+  width: 100vw;
+  height: 100%;
+  box-sizing: border-box;
+  background-color: #fff;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 5.5rem 10.375rem ;
+  display: flex;
+  flex-direction: column;
+}
+
+.menuBar {
+  display: flex;
+  justify-content: flex-end;
+  gap: 2.5rem;
+}
+
+.menuBar>img {
+  margin-right: auto;
+}
+
+.menuButton {
+  display: flex;
+  align-items: center;
+}
+
+.menuButton a:hover{
+  color: hsl(5, 85%, 63%);
+}
+
+.mainContent {
+  display: flex;
+  flex-direction: row;
+  padding: 3.5rem 0;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.75rem;
+}
+
+.mainArticle {
+  display:flex;
+  flex-direction: column;
+  flex-basis: 45.625rem;
+  flex-grow: 1;
+}
+
+img {
+  max-width: 100%;
+}
+
+.newArticlesBox {
+  background-color: hsl(240, 100%, 5%);
+  text-align: left;
+  padding: 1.5rem;
+  flex-basis: 21.875rem;
+}
+
+.newArticlesBox > h2 {
+  color: hsl(35, 77%, 62%);
+  font-size: 2.5rem;
+  margin: 0
+}
+
+.newArticlesBox ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+.newArticlesBox h3 {
+  color: hsl(36, 100%, 99%);
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.newArticlesBox a:hover {
+  color: hsl(35, 77%, 62%);
+}
+
+.newArticlesBox p {
+  color: hsl(233, 8%, 79%);
+}
+
+.articleDescBox {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.articleDescBox h1 {
+  font-weight: 800;
+  text-align: left;
+  color: hsl(240, 100%, 5%);
+  font-size: 3.5rem;
+  line-height: 1;
+  flex-basis: 350px;
+  margin: 1.5rem 0;
+}
+
+hr {
+  margin: 2rem 0;
+  border: 1px solid hsla(36, 100%, 99%, 0.278);
+}
+
+.articleSummary {
+  text-align: left;
+  flex-basis: 350px;
+}
+
+.articleSummary button {
+  height: 3rem;
+  padding: 1rem 2rem;
+  font-weight: 800;
+  letter-spacing: 0.2rem;
+  border: 0rem;
+  background-color: hsl(5, 85%, 63%);
+  margin-top: 1rem;
+}
+
+.articleSummary button:hover {
+  background-color: #000;
+  cursor: pointer;
+}
+
+.topArticlesBar {
+  counter-reset: articleNb;
+}
+
+.topArticlesBar ol {
+  display: flex;
+  flex-direction: row;
+  text-align: left;
+  padding: 0;
+}
+
+.topArticlesBar li {
+  list-style-type: none;
+  flex: 1 1 0px;
+  display: flex;
+}
+
+.topArticlesBar li img{
+  height: 8rem;
+  float:left;
+  margin-right: 2rem
+}
+
+.topArticlesBar li div::before{
+  counter-increment: articleNb;
+  content: counter(articleNb, decimal-leading-zero);
+  display: inline-block;
+  color: hsl(233, 8%, 79%);
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  cursor: default;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.topArticlesBar li h3{
+  margin: 0;
+  color: hsl(240, 100%, 5%);
+}
+
+.topArticlesBar li a:hover{
+  color: hsl(5, 85%, 63%);
+}
+
+.topArticlesBar li p{
+  margin-top: 0.5rem
+}
+
+@media only screen and (min-width: 1000px) {
+  .topArticlesBar li:not(:first-child) {
+    margin-left: 1rem;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .topArticlesBar li:not(:last-child) {
+    margin-bottom: 1rem;
+  }
+  .topArticlesBar ol {
+    flex-direction: column;
+  }
+  .topArticlesBar li {
+    margin-left: 0;
+  }
+}
