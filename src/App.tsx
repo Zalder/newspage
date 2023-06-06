@@ -1,38 +1,39 @@
-import "./App.scss";
+import classes from "./App.module.scss";
 import logo from "./assets/logo.svg";
 import articleImage from "./assets/image-web-3-desktop.jpg";
 import retroPcImg from "./assets/image-retro-pcs.jpg";
 import topLaptopImg from "./assets/image-top-laptops.jpg";
 import gamingGrowthImg from "./assets/image-gaming-growth.jpg";
+import { NewArticlesBox } from "./components/NewArticlesBox";
 
 function App() {
   return (
     <>
-      <div className="container">
-        <div className="menuBar">
+      <div className={classes.container}>
+        <div className={classes.menuBar}>
           <img src={logo} alt="logo" />
-          <div className="menuButton">
+          <div className={classes.menuButton}>
             <a href="#">Home</a>
           </div>
-          <div className="menuButton">
+          <div className={classes.menuButton}>
             <a href="#">New</a>
           </div>
-          <div className="menuButton">
+          <div className={classes.menuButton}>
             <a href="#">Popular</a>
           </div>
-          <div className="menuButton">
+          <div className={classes.menuButton}>
             <a href="#">Trending</a>
           </div>
-          <div className="menuButton">
+          <div className={classes.menuButton}>
             <a href="#">Categories</a>
           </div>
         </div>
-        <div className="mainContent">
-          <div className="mainArticle">
+        <div className={classes.mainContent}>
+          <div className={classes.mainArticle}>
             <img src={articleImage} alt="" />
-            <div className="articleDescBox">
+            <div className={classes.articleDescBox}>
               <h1>The Bright Future of Web 3.0?</h1>
-              <div className="articleSummary">
+              <div className={classes.articleSummary}>
                 <p>
                   We dive into the next evolution of the web that claims to put
                   the power of the platforms back into the hands of the people.
@@ -42,39 +43,9 @@ function App() {
               </div>
             </div>
           </div>
-          <div className="newArticlesBox">
-            <h2>New</h2>
-            <ul>
-              <li>
-                <h3>
-                  <a href="#">Hydrogen VS Electric Cars</a>
-                </h3>
-                <p>Will hydrogen-fueled cars ever catch up to EVs?</p>
-                <hr />
-              </li>
-              <li>
-                <h3>
-                  <a href="#">The Downsides of AI Artistry</a>
-                </h3>
-                <p>
-                  What are the possible adverse effects of on-demand AI image
-                  generation?
-                </p>
-              </li>
-              <hr />
-              <li>
-                <h3>
-                  <a href="#">Is VC Funding Drying Up?</a>
-                </h3>
-                <p>
-                  Private funding by VC firms is down 50% YOY. We take a look at
-                  what that means.
-                </p>
-              </li>
-            </ul>
-          </div>
+          <NewArticlesBox />
         </div>
-        <div className="topArticlesBar">
+        <div className={classes.topArticlesBar}>
           <ol>
             <li>
               <img src={retroPcImg} alt="" />
