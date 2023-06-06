@@ -123,7 +123,7 @@ hr {
     background-color: hsl(5, 85%, 63%);
     margin-top: 1rem;
 
-    :hover {
+    &:hover {
       background-color: #000;
       cursor: pointer;
     }
