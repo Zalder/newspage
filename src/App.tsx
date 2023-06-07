@@ -3,6 +3,7 @@ import logo from "./assets/logo.svg";
 import articleImage from "./assets/image-web-3-desktop.jpg";
 import { NewArticlesBox } from "./components/NewArticlesBox";
 import { TopArticlesBar } from "./components/TopArticlesBar";
+import articles from "../data.json";
 
 function App() {
   let menuButtons = ["Home", "New", "Popular", "Trending", "Categories"].map(
@@ -12,6 +13,8 @@ function App() {
       </div>
     )
   );
+
+  let topArticles = articles.topArticles;
 
   return (
     <>
@@ -37,7 +40,7 @@ function App() {
           </div>
           <NewArticlesBox />
         </div>
-        <TopArticlesBar />
+        <TopArticlesBar topArticles={topArticles} />
       </div>
     </>
   );
