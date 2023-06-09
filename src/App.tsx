@@ -15,6 +15,7 @@ function App() {
   );
 
   let topArticles = articles.topArticles;
+  let newArticles = articles.newArticles;
 
   return (
     <>
@@ -38,7 +39,7 @@ function App() {
               </div>
             </div>
           </div>
-          <NewArticlesBox />
+          <NewArticlesBox newArticles={newArticles} />
         </div>
         <TopArticlesBar topArticles={topArticles} />
       </div>
