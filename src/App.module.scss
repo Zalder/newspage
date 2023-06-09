@@ -3,9 +3,13 @@
   height: 100%;
   max-width: 1440px;
   margin: 0 auto;
-  padding: 5.5rem 10.375rem ;
+  padding: 5.5rem 10.375rem;
   display: flex;
   flex-direction: column;
+
+  @media only screen and (max-width: 700px) {
+    padding: 1rem 1rem;
+  }
 }
 
 .menuBar {
@@ -13,7 +17,7 @@
   justify-content: flex-end;
   gap: 2.5rem;
 
-  >img {
+  > img {
     margin-right: auto;
   }
 }
@@ -21,7 +25,7 @@
 .menuButton {
   display: flex;
   align-items: center;
-  
+
   a:hover {
     color: hsl(5, 85%, 63%);
   }
@@ -37,7 +41,7 @@
 }
 
 .mainArticle {
-  display:flex;
+  display: flex;
   flex-direction: column;
   flex-basis: 45.625rem;
   flex-grow: 1;
@@ -52,6 +56,10 @@ img {
   flex-direction: row;
   justify-content: space-between;
   margin-top: 1rem;
+
+  @media only screen and (max-width: 700px) {
+    flex-direction: column;
+  }
 }
 
 .articleDescBox h1 {
@@ -62,6 +70,10 @@ img {
   line-height: 1;
   flex-basis: 350px;
   margin: 1.5rem 0;
+
+  @media only screen and (max-width: 700px) {
+    flex-basis: 0;
+  }
 }
 
 hr {
@@ -72,6 +84,10 @@ hr {
 .articleSummary {
   text-align: left;
   flex-basis: 350px;
+
+  @media only screen and (max-width: 700px) {
+    flex-basis: 0;
+  }
 
   button {
     height: 3rem;
@@ -86,23 +102,5 @@ hr {
       background-color: #000;
       cursor: pointer;
     }
-  }
-}
-
-@media only screen and (min-width: 1000px) {
-  .topArticlesBar li:not(:first-child) {
-    margin-left: 1rem;
-  }
-}
-
-@media only screen and (max-width: 1000px) {
-  .topArticlesBar li:not(:last-child) {
-    margin-bottom: 1rem;
-  }
-  .topArticlesBar ol {
-    flex-direction: column;
-  }
-  .topArticlesBar li {
-    margin-left: 0;
   }
 }

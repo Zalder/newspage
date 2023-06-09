@@ -1,9 +1,12 @@
 import classes from "./App.module.scss";
 import logo from "./assets/logo.svg";
 import articleImage from "./assets/image-web-3-desktop.jpg";
+import articleImageMobile from "./assets/image-web-3-mobile.jpg";
 import { NewArticlesBox } from "./components/NewArticlesBox";
 import { TopArticlesBar } from "./components/TopArticlesBar";
 import articles from "../data.json";
+import { useMediaQuery } from "react-responsive";
+import { ReactComponent as MenuIcon } from "./assets/icon-menu.svg";
 
 function App() {
   let menuButtons = ["Home", "New", "Popular", "Trending", "Categories"].map(
@@ -16,17 +19,18 @@ function App() {
 
   let topArticles = articles.topArticles;
   let newArticles = articles.newArticles;
+  let isMobile = useMediaQuery({ query: "(max-width: 700px)" });
 
   return (
     <>
       <div className={classes.container}>
         <div className={classes.menuBar}>
           <img src={logo} alt="logo" />
-          {menuButtons}
+          {isMobile ? <MenuIcon></MenuIcon> : menuButtons}
         </div>
         <div className={classes.mainContent}>
           <div className={classes.mainArticle}>
-            <img src={articleImage} alt="" />
+            <img src={isMobile ? articleImageMobile : articleImage} alt="" />
             <div className={classes.articleDescBox}>
               <h1>The Bright Future of Web 3.0?</h1>
               <div className={classes.articleSummary}>
