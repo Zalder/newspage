@@ -7,26 +7,38 @@ import { TopArticlesBar } from "./components/TopArticlesBar";
 import articles from "../data.json";
 import { useMediaQuery } from "react-responsive";
 import { ReactComponent as MenuIcon } from "./assets/icon-menu.svg";
+import { MobileMenu } from "./components/MobileMenu";
+import { useState } from "react";
 
 function App() {
-  let menuButtons = ["Home", "New", "Popular", "Trending", "Categories"].map(
-    (elem, idx) => (
-      <div className={classes.menuButton} key={idx}>
-        <a href="#">{elem}</a>
-      </div>
-    )
-  );
+  let menuStrings = ["Home", "New", "Popular", "Trending", "Categories"];
+  let menuButtons = menuStrings.map((elem, idx) => (
+    <div className={classes.menuButton} key={idx}>
+      <a href="#">{elem}</a>
+    </div>
+  ));
 
   let topArticles = articles.topArticles;
   let newArticles = articles.newArticles;
   let isMobile = useMediaQuery({ query: "(max-width: 700px)" });
 
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   return (
     <>
+      {isMenuOpen && <div className={classes.transparentBg}></div>}
+      {isMobile && isMenuOpen && (
+        <MobileMenu
+          menuStrings={menuStrings}
+          onClose={() => setIsMenuOpen(false)}
+        />
+      )}
       <div className={classes.container}>
         <div className={classes.menuBar}>
           <img src={logo} alt="logo" />
-          {isMobile ? <MenuIcon></MenuIcon> : menuButtons}
+          {isMobile
+            ? !isMenuOpen && <MenuIcon onClick={() => setIsMenuOpen(true)} />
+            : menuButtons}
         </div>
         <div className={classes.mainContent}>
           <div className={classes.mainArticle}>

@@ -8,14 +8,23 @@
   flex-direction: column;
 
   @media only screen and (max-width: 700px) {
-    padding: 1rem 1rem;
+    padding: 2rem 1rem;
   }
+}
+
+.transparentBg {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background-color: hsl(240, 100%, 5%, 50%);
 }
 
 .menuBar {
   display: flex;
   justify-content: flex-end;
   gap: 2.5rem;
+  align-items: center;
 
   > img {
     margin-right: auto;
@@ -23,9 +32,6 @@
 }
 
 .menuButton {
-  display: flex;
-  align-items: center;
-
   a:hover {
     color: hsl(5, 85%, 63%);
   }
