@@ -3,7 +3,7 @@ import { ReactComponent as MenuCloseIcon } from "../assets/icon-menu-close.svg";
 
 type Props = {
   menuStrings: string[];
-  onClose: () => any;
+  onClose: () => void;
 };
 
 export const MobileMenu = (props: Props) => {
