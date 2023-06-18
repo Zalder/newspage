@@ -105,7 +105,8 @@ hr {
     margin-top: 1rem;
 
     &:hover {
-      background-color: #000;
+      background-color: hsl(240, 100%, 5%);
+      color: hsl(36, 100%, 99%);
       cursor: pointer;
     }
   }
